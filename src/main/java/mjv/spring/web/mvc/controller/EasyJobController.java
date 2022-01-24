@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -45,11 +46,18 @@ public class EasyJobController {
 		service.salvarCadastro(cadastro);
 		return index();
 	}
+	@GetMapping("/consultar")
+	public String consulta() {
+		return "consulta";
+	}
+	
 	@GetMapping("/busca/{id}")
-	public ModelAndView busca(@PathVariable Profissao prof) {
-		Iterable<Cadastro> cad= (Iterable<Cadastro>) new Cadastro();
-		profRepository.findById(prof.getId());
-		return index();
+	public String busca(@PathVariable("id") Integer id, Model model) {
+		
+		model.addAttribute("cadastros",service.listarPorProfissao(profRepository.getById(id)));
+		
+	
+		return consulta();
 	}
 
 }

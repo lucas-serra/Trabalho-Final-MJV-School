@@ -1,5 +1,6 @@
 package mjv.spring.web.mvc.service;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ public class CadastroService {
     @Autowired
     private CadastroRepository repository;
 
+ 
     @Autowired
     private ProfissaoRepository profissaoRepository;
 
@@ -27,4 +29,8 @@ public class CadastroService {
         }
     }
   
+    public List<Cadastro> listarPorProfissao(Profissao prof){
+        return repository.getByProfissao(prof);
+    }
+    
 }
