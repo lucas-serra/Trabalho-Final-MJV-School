@@ -107,12 +107,4 @@ public class Cadastro {
 		this.sexo = sexo;
 	}
 
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
 }
