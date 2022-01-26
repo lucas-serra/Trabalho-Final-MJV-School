@@ -50,14 +50,36 @@ public class EasyJobController {
 	public String consulta() {
 		return "consulta";
 	}
-	
 	@GetMapping("/busca/{id}")
-	public String busca(@PathVariable("id") Integer id, Model model) {
-		
-		model.addAttribute("cadastros",service.listarPorProfissao(profRepository.getById(id)));
-		
-	
-		return consulta();
+	public ModelAndView busca(@PathVariable("id") Integer id, Model model) {
+		ModelAndView mv = new ModelAndView("consulta");
+		mv.addObject("cadastros",service.listarPorProfissao(profRepository.getById(id)));
+		return mv;
 	}
-
+	@GetMapping("busca/index")
+	public ModelAndView retornar() {
+		ModelAndView modv = new ModelAndView("index");
+		
+		return modv;
+	}
 }
+
+/**<table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <div th:each="p : ${profissoes}">
+                    <tr>
+                        <td th:text="${p.nome}">Nome</td>
+                        <td scope="col">
+                            <a class="btn btn-dark btn-social mx-2" th:href="@{/busca/{id}(id=${p.id})}"><i
+                                class="fas fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    </div>
+           
+                </tbody>
+            </table>*/

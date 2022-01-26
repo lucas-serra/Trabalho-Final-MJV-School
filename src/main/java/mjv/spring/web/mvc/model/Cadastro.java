@@ -23,10 +23,12 @@ public class Cadastro {
 
 	@Column
 	private String nome;
-	
-
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataNascimento;
 	private String email;
+	private String endereco;
+	private Double pretensaoSalarial;
+	private Integer anosExperiencia;
 	@ManyToOne()
 	@JoinColumn(name = "prof_id")
 	private Profissao profissao;
@@ -69,6 +71,30 @@ public class Cadastro {
 
 	public Cadastro() {
 
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public Double getPretensaoSalarial() {
+		return pretensaoSalarial;
+	}
+
+	public void setPretensaoSalarial(Double pretensaoSalarial) {
+		this.pretensaoSalarial = pretensaoSalarial;
+	}
+
+	public Integer getAnosExperiencia() {
+		return anosExperiencia;
+	}
+
+	public void setAnosExperiencia(Integer anosExperiencia) {
+		this.anosExperiencia = anosExperiencia;
 	}
 
 }
