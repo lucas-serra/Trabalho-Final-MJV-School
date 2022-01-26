@@ -33,16 +33,40 @@
     <div class="container">
 
         <div class="text-center">
-        	<h2 class="section-heading text-uppercase">Pesquisar</h2>
+        	<h2 class="section-heading text-uppercase">Os melhores profissionais você encontra aqui!</h2>
             <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-            <form class="form-horizontal"id="contactForm" action="retornar" th:object="${cadastros}" method="GET" data-sb-form-api-token="API_TOKEN">
             
-            	<div th:each ="c:${cadastros}">
-            	<p th:text="${c.nome}"></p>
+            	
+            	<table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Pretenção Salarial</th>
+                        <th scope="col">Endereço</th>
+                        <th scope="col">Anos de Experiência</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                	 <div th:each ="c:${cadastros}"> 
+                    <tr>
+                    	
+                        <td th:text="${c.nome}">Nome</td>
+                        <td th:text="${c.pretensaoSalarial}">Pretenção Salarial</td>
+                        <td th:text="${c.endereco}">Endereço</td>
+                        <td th:text="${c.anosExperiencia}">Anos de Experiência</td>
+                        
+                    </tr>
+                    
+                    
+                    
+           
+                </tbody>
+            </table>
+            	
             	</div>
-            </form>
-        </div>
-   			<a href="index" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Link primário</a> 
+        <div>
+   			<a th:href="@{/}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Inicio</a> 
    		
         </div>
 
