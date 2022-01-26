@@ -29,6 +29,9 @@ public class Cadastro {
 	private String endereco;
 	private Double pretensaoSalarial;
 	private Integer anosExperiencia;
+	private String cpf;
+	private String sexo;
+
 	@ManyToOne()
 	@JoinColumn(name = "prof_id")
 	private Profissao profissao;
@@ -95,6 +98,22 @@ public class Cadastro {
 
 	public void setAnosExperiencia(Integer anosExperiencia) {
 		this.anosExperiencia = anosExperiencia;
+	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 }
