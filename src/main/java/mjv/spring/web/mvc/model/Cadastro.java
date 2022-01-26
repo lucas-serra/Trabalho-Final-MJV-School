@@ -29,7 +29,6 @@ public class Cadastro {
 	private String endereco;
 	private Double pretensaoSalarial;
 	private Integer anosExperiencia;
-	private String cpf;
 	private String sexo;
 
 	@ManyToOne()

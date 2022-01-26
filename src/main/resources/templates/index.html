@@ -21,7 +21,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+                <a class="navbar-brand" href="#page-top"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAARVBMVEX///8GExsAAADg4uT6+vr///2Nj5Ln6Ora29yeoKE8QEQACRRMUFQhJy6lpqctMDY2OD6bnaDv7/CBgoUmLTKvsbPQz9GwFVZJAAABI0lEQVR4nO3PSxKCQBBEwaJBUEH8e/+jCksNwoXrrO3EvOhMl4/t0teQfR2S49hsbn2bTslcbX7ufEmuS62t7VCzBG51Ty7n36G25uWcx1rbDo1T8qxXhuq//3YhJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQk/FP4BoZDpC6U1bKcAAAAAElFTkSuQmCC" alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -42,15 +42,15 @@
             <div class="container">
                 <div class="masthead-subheading">Bem vindo!!!</div>
                 <div class="masthead-heading text-uppercase"> Essa é a maior plataforma de cadastro e busca de profissionais do Brasil!</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Conheça-nos</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#servicos">Conheça-nos</a>
             </div>
         </header>
         <!-- Services-->
-        <section class="page-section" id="services">
+        <section class="page-section" id="servicos">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Serviços</h2>
+                    <h3 class="section-subheading text-muted">Conheça as vantagens de utilizar nosso software.</h3>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
@@ -58,34 +58,62 @@
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">E-Commerce</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <h4 class="my-3">Empresas</h4>
+                        <p class="text-muted">Com 23 anos no mercado, a Contratex possui diversas empresas que acessam a plataforma diariamente buscando encontrar profissionais que atuam nas diferentes áreas de TI.</p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Responsive Design</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <h4 class="my-3">Mercado de Tecnologia</h4>
+                        <p class="text-muted">A plataforma dedica-se a profissionais voltados para o mercado da tecnologia da informação, </p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Web Security</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <h4 class="my-3">Segurança</h4>
+                        <p class="text-muted">A plataforma dispõe de um moderno sistema de segurança que garante que os dados sempre estarão livres de qualquer ameaça de criminosos.</p>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- Buscar -->
+       <section class="page-section" id="pesquisar">
+       <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Pesquisar</h2>
+                    <h3 class="section-subheading text-muted">Os melhores profissionais estão aqui!</h3>
+                </div>
+       <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <div th:each="p : ${profissoes}">
+                    <tr>
+                        <td th:text="${p.nome}">Nome</td>
+                        <td scope="col">
+                            <a class="btn btn-dark btn-social mx-2" th:href="@{/busca/{id}(id=${p.id})}"><i
+                                class="fas fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    
+                    </div>
+                    
+           
+                </tbody>
+            </table>      	
+		</section>  
         <!-- Portfolio Grid-->
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Portifólio</h2>
+                    <h3 class="section-subheading text-muted">Área de interesse de alguns dos nossos clientes.</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">
@@ -95,86 +123,47 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+                                <img class="img-fluid" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMVFRUXGBgXFhYXGB0YGxsZFxgbGhoVGhkeHSogGR0lHhcYITEhJikrLi4uGB8zODMsNygtLisBCgoKDg0OGxAQGy0lICUtLS8tLS0vLS0vLTUtLS0tLS0tLy0tLS0tLS8tLS0tLS8tLS0tLy0tLS0tLS0tLS8tLf/AABEIAMoA+QMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAwQFBgcCAQj/xABDEAABAwIEAwUEBgoBAwUBAAABAgMRAAQFEiExBkFREyJhcYEHMpGhI0JSYrHwFDNygpKiwcLR4bIIQ/EkY4Oj0mT/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAgMEAQX/xAAyEQABAwIEAwYGAgMBAAAAAAABAAIRAyEEEjFBUWFxEyKBkaHwFDKxwdHxBeEjQrKC/9oADAMBAAIRAxEAPwDcaKKKIiiiiiIooooiKKKKIiiiiiIopriN4llpx5XutoUtUdEJKj8hWJWvtxucxK7RkoJ0SlakqA6FRBCj4wKIt3orLsN9tdmvR5h9o9RlcT8iFfy1Z8P9oeGPe7dto8HZa/5gCiK1UUhbXKHBmbWlY6pUFD4il6IiiiiiIooooiKKKKIiiiiiIooooiKKKKIiiiiiIooooi8mvCqufUUT4iiLsGva5Qa6oiKKKKIiiiiiLia9zVzPiKCR1FEVf9oj2XC74/8A87o/iQU/1r5vwjhp99aUphIEKXJGbJmA0HXXSYrf/a3dlvCbkp1KsiBGvvuIBPwJrLPZzlcffdyLSvIgGfd1VrGk/Uqyk0OeGlVV3llMuChsQ4PebClAL7uUBOTNmJWQcpQTolMKJI11AqFLakmCNRMiYOk8lQfqk7bVuD3e3GvLy6GkkspmVIQvQiFpChr4GthwQI7rvfosIx5nvNEeP3n6rF7O6CVZkKKFfaSSk/Ea1acM4zv2oyXbpA5LId9O+DVnueErRe7CU+KJQf5SKi7zgFqCWlvBUEhOihoCY2BG3XmKpfhHjQg++dvVXsxtN1rhSuH+1S8T+sQy4PIoPxBI+VWKy9qrJjtbdxHihQWPnlNZSrA7hAColPX87UBh9O7ZPlr+FZntLPmsttNpqfICeglbvY8aWboBD2WTl74KdYmJIj51M2982v3HEKPQKB/Cvm26xpLTQSptaiVEgD9mJ9N6hl36kraX2bsIKjmX75zDXUbCDpy2ri4vrTNXs18wYZxldsdxFxdBIV3SVhZ1gFCguUxNWLDvbDfIJ7VpDg3T3IMaaEggHziiLfM1dVj9j7bU6dvYup6lpQV5aKCeQqy4f7WcLcgKeUyo8nW1ADzUkFA+NEV7oqMw3H7W4/UXLLvghxKj6gGRUnREUUUUReE1zmr1dcz40RdBVeZvzpXhI6ivZ8fnREFsUdkK7ooi5AiuqKKIiiiiiIooooi47MUdmOld0URZx7dbgt4YAkwVvtp+GZf9lUn2PMlTdws/abQNBshJMfz1Yf8AqIfi2tUfaeUr+FtQ/vFNPY1bRYuL+1cLjyShtP4hVW0TD1TXEshWpTMUmLcyCSCFDYclAAKE9JJ31qVUz+fSP614Wq2ipC880lCvIDYzKUo+BywZ2A0Bn1pRkZgFCdeog/6p6bdWeTkKQRCSkztOYn4j1FLFrUnqSfidqn2iiaSiV2KD9UU0dwtCQSOfIgEE8tx41PdkIHrrMzJmpN5hKk/qwuBpH+RUH1W2DhIV1BtVhJpuIKyy94dzKzKIXroAOsQkaSOWnWopfDGVALCnUHXSREdNIPXQj/WrPWDRMZVpI1lJChIPjM0lcYXnUSlwZlE+8giPQeXhUmuowAWwB72lcqVMS55eXS4nj+YWHPcHOx3VgEKCgFQNddRsP/IqLu8HumzAUFR4Dz6VvJwZ2NUJUeeQhQkeG/yqNuMITspuD4iPxrvw9B+noVD4usyzgsMfeuUmFIjfQD1NNFvERmSpM6ienXWt2dwhCgQsZxlgTuDygnWOoFdIs0hAbypKcoTCkgiBHUabVUcCDo736Kw/yER3ffqsG7VB3j1FTWGcUXjP6m8fRHIOqKf4CSn5VpF5whZr963Qnxb7n/Eio9/gZkyEqyxKQFJQ6kZZgAwFQeuaq3YGoNIKmz+Qpn5gQmGHe13FGoCnGnh/7jYn4oKatGHe3Q/9+y9WnJ/lUkf8qp1xwGsRlKVdSFqQdB9lSVJ105ioq44WeQHCUOAJEtgIDpWfsy0Tl56kRG/SqXYeq3Vp+v0keq0NxNF2jh5x9brbcM9ruGPEJWtxgmP1qCAPNaSUjzJq+thJAI1B1Br40zd2SOWor644RtVNWNq0oypDLaSfFKAP6VSr1K9kK7oooiKKKKIiiiiiIooooiKKKKIiiiiiLEv+op7v2SPuvq+bY/zU37JWowtk/aU8r/7lp/tqo/8AUC/N+yj7FuD/ABuL/wDyKvnAZDeHWaY3ZQr+PvE/FXzqynqq6minUJEkwQdvPxiuwPCuppMXCc2UEZtdPKJE7SJGnjVypgJPIrNJUMsxlymY5HN5/jXmRCnCFEApgiTETzjmfSnKHAdQZjSml7h7bhkjXaRvFVVhUc3/ABmD4j6XSAEBcpnlEz1imFrfpURsCfd5z56CpT9GAb7NOgy5Qd+VQltY3SVNIWttbTZSCQkpVACgkRMHWJO+1aqEdnDzeBym142v1GqzVW1MwLNN7Tw5iLTe/wCZftVJHvEj72v410LjqkHxkj/NQ3GSlpbbKAs/SDNkmQmDqcoJielc8L3BcL5lRQFQnNPIanXXXQ+vKsvbjtezLfHz9+K9IYJ/wpxAdoYjxA1m2sxGg3UpftpcaWhMoKk5ZIlOp1mNfD1piywUoS2tYUqVqABUQAfqjMAdAB8aci5lxbYklCQqEiT+G2o+Nd2TgWjNljNCpI3EaEHp/iu0qlJ1Yls5myPWD6nZV1RXZhuzdAY4h3iRb0G42TFVtSamKeoukKEhQiY9RyHOlMgIB5Gt/aFebUwrmGHNI6gj6qKVbgmCSBMEjkPSkl2QS44U6pUoEQIG2pA5f6qZLRiOUzHKdppJTH5/IqYqmVUaVoCiCzTPFVhpl1wkdxC1T+yDH4VYFMVVvaMrs8Pe+9kQP3lgH5TUjWgEqDaGZwHMLIsFs+1fYZOvaOtNnyWtKT8ia+wG0wAOgAr5i9k9l2uK2w5IK3FeSUED+ZSa+oK8Ve+iiiiiIooooi8JrnNXSq5iiL3NXs1zFEURelVeg1zFeiiLqiiiiL5r9uVxOKu/caaT/KV/31p2BOBu2Yb+wy23/ChI/pWP+1VztMWvI+2lA80toT+IrQWb5QSFx3M2QHX3gJy7a6dK1YVmafBZ8Q4iPFXVFzSrSxp6k6byap7eJJicyswIgDYg7z5fnnUk3iiSE94jTkNjO/iDPLpV7qRVIqKxtuTtrH55VT7nEHkrd/WElxQSMqogKASQSMpB7068qlBeNnkoLkQvTUEjMfgmI8R404/TAYIElIJ5DROvXcj8Kz1KJcLWW7B4xtB5JaHSND1ngfEJ7d3BbaK/eiOXWvWnznyERKUq5bTvPyprdlt1GRcwennOhmuMOYS2ScyjoAJ5Rvz1151IgyvPh/aCD3bcOc7Tw32Ui4/3suRRGne0jXwmflXQaTBgATptFMl4iELgpUqR9UTE6AnQ9DS1mqATJ7wCtZ0MbCdtAnSsVOtWNd1NzIaJg96/yxf5SSSegbfULWabcocDfwt903uMEQpRWJQo6ShRGnTSKdptglsITyTlTOu2341E2eMJUgEODOT7gBBnbfY+tTN1cBCcx8B8a1VKTaEvcANSTEaXJPHTW/VZ6WM+KYAHEgaAmYnbUgcxaOCqlrhtylTbakJKUqRKkrOgCsxMEbmOXU1akMgAgR6D8fGukPgkDSfCuyPz60biG1m5mEEcQtmKr1K7pqaj7+9o6JNxgbb0k7bHUa7zp4HlTwnSPx5VwFgk6EeY8eWuo0qQcVlLAmjVrlGUBUSYBMmKoPtjSf0VtAmS6Dl6gAiPioH0rSx8tvnPwrKfa1jKW7htqJKWwqPBa1A68jCB8q495y3XadMZgVz7A8NP6dcOKEFplKY6dqqfj9H+NbzWWewaxSm3uHkkkOPQkqGuVKRv+9m/JrU6zLUiiiiiIooooi5UJrnshSlFESfYigtClKKIkiyK6SgCu6KIiiivDRF8mcUvlzErlcTN058nSPwFSzOJHaaq95cHtnFAkKLi1HkQVKJIPTc16xfqSUqA1SQZB5gz4EelbsJWbTBBKorUy6IV0tb9S1AJ1J6f6q98K4Wl+3zOZ0LzKGispABIiDI5HlzrJ8N4lDRMNpCVGYkhQ6JBMmB6+dWjDuNmwPedamdVSoTzPdJncborn8hTr4iiBhXhrgQZmJgG0idyDvMRCppOZSf/AJGkjkJ4XgX84UtcXym3MkyFOZUKMjMC4UAnTqNY06VIvuutAKWBlOygqRr4GD8qraENuEZHEuKSZCUrk7k+5uNZO281I46+66lKNgkhSd8sQrTvd47jcVKp8Q2tTa0At0cSL9dRFuRvsBcY+1zPincciJF9xMx4KRbxQQCXBmzFOTUd2JCuh10nxqRaxMHnVd4cdDS//UEpQoQSIXKgSBpl0EK2M7GDqAIy5xMhRVASCJAAAjfkNjp8xUmVWPrOoxpN+kfm3RerVwVRmFZic1nECOZzHXezb8JAV/bxDcTvE+hmnIxAeflVHt7o9mHc8CNZg6TE7jKJBHOpBDzqXOyhRWNUgaGIzA76HLuKvq0eznNbXXlr5b8Fgp1C7TpurMoNZkq7OSDMgTHj86WxBvtUZcxTqCI8OtVg4qW9FhbZIiFJUkkHQ6EajXWnjWJjrVD6AqNg3BHUEfhTD4OilsMtVocK1rzaQNOkT4cxUj+lgkpEmDlJHIkSJ5+u1QjeIeNOWL4AKAjvEEnn+TFU08M2k3KwW8dzJ1JKmHypkRRk1mfSoxdwFCJPoYOnKRSJxVLa+zAWrmYJVlB5knlpO867VLsypZ1NhNYL7ScUKsSuAIhBSgT4ITPl3iqt0Q9XzNi1yX33nE6l11xSfHOslP4iqKggK6mZK+kPZJadnhVuTu4FOn/5VFf4GrnTDA7QM27LQ2Q2hI9EgU/qlWoooooiKKKKIiiiiiIooooiKK8muVKoi9UqKY3VzO2340nfYghA7ygOnUxvCRqr0qFcxErMgZB9owVf1SnzOafCpsYXaBQfUa35iq9jXD7SytT6G+zGYgrTnUQNTlSBmMDpVdR7O8Ou2+0tHlpnWUmR5FChKfLSrU/xTaNrKAvtHBorsgp1f7wSCr05VU8Wxdh5anbFD7D6T3nwENNyJ7ryVHMoDUkZeU1aaLzsqmV2lxHBVfGPZtcsnurQscswKZ9dR8YqtXeAXLXvMOAdUDMPPuz86008aXjrS0A2oWjSQhSw4BMqRKwn0g8tpAqvYHxctR+kKVSfqgDTnlAjUdOY2qvIQY0Kudax97+ux3F1Qw4dpnwNSlrxBco2ccOs5VK7RPlkXKR8OVapdYcy8kFxptwESlRSDIPMK3qCvOA7VfuFxo9Acw+CpPwIq4VKzdCqX06NX52gxxEx5qv2vGrgP0iGlA79nLatyII7yD1251Kt8RWikhJStB1EqTmEHUao15kaioy84AuE/q3G3R0MoPwMj51A3mB3DP6xhxI6gSn+JMpqwYw/7N8lT8EwfISPGf8AqfSFdkMMuJCGrnMJnIFZhOvLcbzEc6lMFb7B9LneUACmOcGP6Aj4VlCXDyM+dSFvjLqAMq3OciZT4QD4eFWV8RTxNJ1Ko4wQRfnr7upU6dalUDxBIM6R9z6QtW4sxxTpQGQR7+cZRImABBEgkHcQd684TYadQrtgc2c5e+UHKABA1HOaz+z4vcBGYIVqOWU/PT5VNW3EzEkLDjZB7x1InaO7PTmmu4WhToURSpmRczvckk7DfbxVWMdVrOzfKbcSLCI3N1NuXqUXCm8x7OSMylAHVuZzERos8x/mplnDLsNhyEOCJJQoA+oMCfImq2qybdBCVpWT3u6oFRzjQwNdQnpyqwLxlxDKmigglMJ1nKY00JBifDrVWMq12Zewbm1mfTcG99OS7QawtiobgfspunFCU91UEjQxMeMc6kra+ydojOlzMMvaZYMEbjykp16D1o1xnYISogjkUmR5edLN35EE7ESD6kfHTby6it7qbSVAEjRXHGMZ7O2ecG6WlqHmEmB8YrHeDrHtb21a3l5ufJBzH5JNWXijEybVaZ98pT6ZgSPgDXPsXsu0xRtUaNIcc9YCB/zNebjBleByWvDfKSvpRNdUkk0oKyLQvaKKKIivCa4ooiUorlNeqVFEXtcqVUTjfENvaozvOpbHKd1fsoHeV6Cs7xz2kOOJJtUlCNfpCApweOT3Ujx73pWjD4WrXPcFuO3n9hJVNavTpCXlW7iX2gWVmrs3HCXInIhJUY215DUHcjaq4vjt66Cf0VCWkKBhx0yrQ6gITKQfMk1TOKmjc2TF8kfSMfRvgjkT7xEbBRB8nCeVRHBmJFtfYqOi4UgzOVX+wNR51ylTBfkdrtpqPMFde/K0PiRuN45LSLbDHlqUpy6IVsS2EjNzAKl5lGPOvFYQ2qSEdoUq/wC8S7J6QskDqIA3BqVbdCu8CmOYPhv6+XQUuH0gFQOnw06irA903/XKNLquvQaB3dNZG466yPPieEcpuO8BlEbRpHWOUa6dCfCqvj2BLQ8LllQAUQHU6wTslwj1j/yav/aCSQQUnQDoeX5/zTW8UhAIWpAaO2YgAD7Ou0fhVzakiPf7C8fsXUavaA9eYP69As1veGsiw42tAGaQCCUjkUfj6HqmmGLcKZQH0OAZlfSwPcWecTpJHx8xVwfvmsrjSVdo1JIKO9qTIWDMHxE8vGoy5xVppMKypQUhKw8tJKhyHcHKYHhH2RVdd4qCXfNv5WP2O/VexSGW7dD4e+ic8I4iGyGHyktrPdVsEr/oFfj51b7rCSNUd4dDv/usuadTcfRNJcWV91KijI2B45+8qAdAPLQVerKxv7EAsK/SmB71u4YcQP8A2nI1HgZ0EAEmaph4Ex74qcsJg/rknCWknTUEbjmPSkFiFZQFecafnxqawzELW/ScoUhxIBU24nI6iSRqk8pBEiRII3qqcQ4wuzuRb5FvEpCh2YBMEkBJQToRG8geVGvB1XXNgWTi94cZe/WMNqO0kAK88w1A9art97O7dR+iWtBMwArOn4K1+dWey4oYUQ2HkBzOU5SdZCdes7ETtoaisf42aaWhLZRKpzrBEAQYjlvz28665gRriqTfcB3CfcW06Ok5CfQyPnUBe4S+z+sZcbHWDl/iEpq74Dh11fqKgpDYC4df94FIGiUKI+kUOfTXbSrj+jJS4WbZx1tYOoeSXEEDc6kLQkkGCCR4VCnSe8FzQbLrntaYJWLvvOFpClLC0q0SVEkgNyAjoE96QKd2PE100IS85l+yT2if4FyPlWn3lsyEj9Lt20K7/wBMjvITO5LiQFNgjmsJqvXPAtu4MzLy0zqDIdSfEHc+eapipUbv5rkMcoO/4rU80EOIYJVBCkAoUghRBCkzlkgcgNFUyRiJgAqMCYE6Cd4HKYHwp9e8BXaJKOzeH3VZVfBUD+Y1X7zDHmf1jTjfiUkJ+PumrWYst1aoGiNk5xW7zhKfEq+Aj+6tI9gFp9JdPdA22PXMo/21kwM6zNbx7D7TJYFfN11avRMN/wBhrPWqdo8uVtNuUQtNSqlUqpBFKpqpTSoNE1xXs/maIvCg9a5KSOcUtTS+nLI3BmOvh86Io/H+Ireya7W4cDaZgEySo75UpGpMVlvEntPu3kxYs9kg7POFKlkdUokpR6yfKtSuGWbppTTqEuIVopCxPy5EbzuNDWScUezu4sSp+wl+3Mly2X3lJHPLzXH2h3hp72prThuxzf5P6VVY1A2aYk8OPTn9dLaiqYVgN7fOqWtUk+848oknpG5/AdKQdLto7kcTEQSkGZTqO0SR7w0PQ+Rqaw/ExcIJt3FoVllbQIDgA3IA99I+2NdpANOuE+AEXLhdfuSBvkSZcV0KlqnQ+E9JBEV62J/kKWComrVPcECAJ10A284A3K8zDsqYmo4SOkEEHmNjvvOre6LqYZjBt7jsrpJFvcJCVhxMQleiVq6p1KTzg67VXOLeHnMPfKSFhJIVbuciJ2J5qG2m+h2NKcV2lva3JbafTcNEyoCCpBTpkKoyk6naNtUiBLQ390kBLd04WsoMDvZRMZZIkRp8RWP4VmJpsrYUd0jSC30OnTThqtzappnLUN+P6V4w3iAJQhSGnFBSAVJCSMqxoQVrhBGm4O0U3uuNQnMAWUeBWXVD9xsR/NUNg+F261hV4848kgEd/MJJ+snNoN5jpyqVsbK0S99AgIAkZVe9B0iDv5zO+pqGGwL8zqRzd3cgxrpPLbiqcV/LNAzR9vHx+t02RxJcOaNpuHEkaBOVlMDnOrgE+PKlLKyee7yuzQR7xVmdcB5ype1TrtmkHO2A2tJgFI7qhzQ5G+/++i9g+P8AutLLx3WkZG0idMqpOcR135jadDsOxgGfM4nht76rK3G9rJpZWAD/AGIn0At4f1GtcOgryvPrI3zTlBHhGnw/Gp+z4TsYKezQsHckfnrSOctqkpTkOpHIfeAPzHwqw2do4uFwG0xqtcj+FOhUN/egagidRWaph3UapqGp3CLNga8Z1PudEo4l2IGVolw1Mn9AJvhuA21scwBUTolS1FZE/VSD/TU1KvuZEFbiww2N1KIzfPRPrJ8BVS4o9oFtZSm3Sbm42KpkJ/aUBCR91MeVZhiuJXV8Q9dOwkz2LZ7qNN1RJ0G3iRHI1RVrOqGSfNelTohov7/KuvEHtQQM7OGoClalTytjAgqk6qMR3lGqVaF50PuvlXeADj5MqM6JYQDCTnXEiRASZMCCthWH5WnFrSktHupyRmccGwBEkISTmVII90ASRHWHhIZeKJaMpQp1ZnMCQU26YAKSYK1QDIQMxA0NQVpTzCMMyISt3MpLglskQFJMbE7+QPODVvw3gVl2HLppKRIKUjRSvEkagfnpWd22IXNqIbdQ8lRKi0rvoHlzCp1lNXHBeP0LhDii2rbs3yYPUIfHeAO0KnyroInvaLjg6O7qr2w0RCEICG0iElEZQOQSNQoegpC7aU0nKCTppJ38yTt5U0XjqSkD9VMBOb3f3VDuq02Bg+FFzcHL2mZCtu4TJ+A0Hl4VJjGseHkiDaSLknQAiwHUcLrNVzVczWsIIE20tqbknyTW6UUAuK7xiCSvT9md+e8VXm7DMtS2ypmTIUkgEnScwPccJOgOX1FSailxepSjUlJglMjmDzM8/wDAqEx/EgIalJy/WQDnVyknkmddY23FelTospEUWNAPCIa0HeLNcZ2aQeIWZ0uayrldlnvHMJJGwIEtEcQRHO5ct8RLaOV5OeNCtsEEEaHO2enUKPlU7huIM3CZacSscwNx4KSdR6is4t7N+7UoMBICInMsJ8ciYB7x13nblNJYobcBLiUO27qQQopczKUQfqneY5ydegqmsyl2nZMMuHzREDS5vIG5kutveFsouDw8l4EXAJlxGw7ohx00A2nitFveE7R6c7CJP1kjIfimDV84UwpDFs000CEJTpJk66kk9SSTWC4V7QLlshLqS80TGujuWRoFgALMaap1ncV9GYT7g0KdNUqEEeBFee4jZaGzunoa0r0NmN6UBr2oqSS7M9a7jzrqiiIprdIkU6rlSaIqXibbra+0bMH5HwNP8Jx1D0JV3HBynfxB51M3VoFCqpjOBfWToRqCOvWuomPG/s4Zu1fpFur9Gu9w4mQlZ++BsfvjXrNZheXj9u4ba/QWXeTg9xydMyo0M/bT6gVrOF8RLaPZ3GqeTkf8v8/HrU1jeD218x2b7YdQdUke8k/aQoapPiN/EVqw+KdStqOH4Wethm1SHaOGhGv9jkZHiAViWH4Ta9p2j4BTOiZGQ8wVDYjf7umvKUOOr2yUpP6M0pCwRK0wlsgdE8ztqPWad8U8GXeFy40VP2g1KgO8gdFp+r+2O6eeWQKQw1bT6e0SAsp1yEag7wscvBQ08RuNuRj6vxjHvc4D5c0DoQdQdTxIk88jKIZWaKr8rSQJuWjoLn/zMk6HhC2d0rMnOlSFqkoWRlCv3YAPppttVmwa6SkhRgrE91U7ciggyfI7dDSPGfEhWyGP0dsJjuzJIUBHaJkyFa7giOc6zGcKYddXa8rDRUpJGZezY/aXsDzjU+BrWyscRQLcSCwdduuvgbngtFSn8JiRVwjg4jlMcf21xI2cCr1bYsl6FEJBEJ8RAiD13n8IqTwnB1uqKm0dw7qJIbHUgdd9EyJ3ilWsDs8PT2164HHI91IOSemTdw/tafdFQmNcVYhe/R2TSmWds8fSEeA+qPLWsNTGMpt7PDgxxN/Kfv5BZH4F+JrnEYo3N4bA8DA/s6lxNzP4rjNjho76u3uN0oTqQfup2R5nXxqmX2L4hiisurLP2EGJH31c/KpTh/2fBJz3ElR1IOqifEmrsxYJQMqUgAchXnElxl1yvRYxrGhrQABsFV8E4ZaZAzNoUoc4j/z8Kmb7DLS4A7e3SSBAVEEDoFJhQFSRYrhTNdkLsFVjGPZ+y/HYPqayoCEIgLQlI5ZZCtTJJJMk0jc8PXTeVgWtvdWyVJSgqXDiQrRbq1mCCTqQkHTQbCrUbeniXooiw/EcNSq5LSLd1hKlEIC5EIT7zq8+oSB3t4A59VnOCHHR/wCmeYuEnbKvKQDpKkK2Hx51ti1pWClQCkkQQRIIO4I5imFhw9aMuF1phDaynLKZACZmAmcqdQNgNhXMq7KynFsDfw1KSh7RRCIOrajGsoOgH+hNMbDidtWjiFW50BKR2jJPIFvdO0wk1oHGHBt1cuqdauEEQkJbUFIypA1SFAkGSSSYG4GwqgYrwzfNDK7bLUmTBQnPJUIJlvUkjTvVJr3MdmYSFxzGvbDxPVTeJY8+tkTDjaR3XWoWnnAOUAo05EVXbZoXWbK4w3lE5VLOZ0zqT3hlSQYkQKZ3VobRyGXShxGjqkKCgHIGZsxEhJlOo1IVReXrSlAXjOVzRXb24yLEwQXGj3VGInYitNDF9k3IGgCZMWknfh6DzuKKmHLzIdfSTew2v95U1juL2/ZIUu0bYdQMqexMKVHJJgd2N1KmPPelPvqdVmVJUdEpGwHQenOptvh5x5YWzcsvA651EpUI5KbykpjoAasuB4QzanN3bi5O3NCT9pX4hO/XkU5RkYzsqQIZzJJM9Sescb3VwBzZ3XPgAI93PlC94F4ZFupF1cpCntDa255HlcOjkkHVI667wK2jBVHIJJUSSVKO5UdSfDy5CBVQ4ewdalF1wlS1aqUef+B4VfLK1gVUrU+bNKVykV1REUUUURFFFFEXhFNnmgacqriiKt4rgyVg6VXmHXrNXdlTfNB/p0/CtCWio+8w9KhqB+d6Ik8LxVt9MpOv1knceBFUHjD2XgrN1hqgw/uWgcra+uXkgnp7p8N6sL+FKQ4laISROqYHI6eI86RvMcu0juoSRGh1n1HX1qbHuY7M0wouaHDK4SCq5h/s7SSLrFXGxlSPoGSUtjqVrmSTzCYHiaWxbjtKEC3w5pKUp0CgnKgfspG/53prfYbdXapeUojknZI8hU3g3B4TEiu1KrnmXFcYwMaGtFgqGnh24ul9o6taln6xO3gBsBVowfAb+31aUFDoqUn4jT4itFscJSgbVJoZAqEqUKmNcQuoEXLCx1Vlzj4p1+KalLS/YdEpMaToQR68x6xU+pgHcVF3fD7CySW0z1Ag79RrSV1cfo0+6QryNJm2MxFNVYA63PYvHbRLgzgHpm0VHrXKb66ayhxrMPrKSQqPQwoCNomuyuKZRaACPjSa7MGmdnxC0vnB5g90jzSqCKlGrhCtlDy2Pwoijl2HSkFW6hU9lrwtCu5lyAq/mI3FKofqXXag8qbOYeKkHKOVQ95hNs8Qp1hpagQQopE6a77+lVjGPZnavuKcDrqSpRUsEhQMmTBOqd+pjpV3XYkbUnkImfzrSxS4WeY57PGEQrKlQkJSiNSeQ8o38BVh4b4RCACRr5R8ql7JntnO1UNE6N8wRzVG2vXyqzNNgVBxupgJG0sQkbU8AivKPz+NRXUpRXia9oiKKKKIiiiiiLlW1cwqlKKIkoVQpBpWiiJm5bE8hSAwwHUgVJ0URMm7FI5U4Q0BStFEXgFe0UURFJkGfClKKIkilXhXJbJpeiiKKvsHbdELbQrzAP8ASoZ3hMp/UuLb8JzJ/hVIHpVuooips3zH1UupH2DlP8KpHzFLMcWoBh5JbP3wUfM90/GrUUim9xZIWIUkEeIrspCb2+JtLEhQE9f87fOno11qvXHCLMktZmldWyU/FOx9RTI4des6tuJdHQ/RqP7ye6f4aWXFbymq/wARvSU26PeXqsjkj/e3xps3jl0O6q3czfspI9FBQHxFO8JwxeZTrvvrMnwHJPpRdT3DbPIkAQIFSCQqu0Jiuq4iT73hXne8KVooi5SK6oooiKKKKIoVF3c80R+6f80oLp/Xu+XcP+alqKIo+yedKyFphMTMRrO2/SpCiiiIooooiKKKKIiiiiiIooooiKKKKIiiiiiIooooiKKKKIivIr2iiLnKK9ivaKIiiiiiIooooiKKKKIiiiiiL//Z" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Threads</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                                <div class="portfolio-caption-heading">Dispositivos móveis</div>
+                                <div class="portfolio-caption-subheading text-muted">Tecnologias que nos acompanham por onde quer que andemos</div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 2-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Explore</div>
-                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 3-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Finish</div>
-                                <div class="portfolio-caption-subheading text-muted">Identity</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <!-- Portfolio item 4-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Lines</div>
-                                <div class="portfolio-caption-subheading text-muted">Branding</div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    
                     <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <!-- Portfolio item 5-->
+                        <!-- Portfolio item 2-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
+                                <img class="img-fluid" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxASEhUSEBIWFRUWFRUVFhYXFRUXGBgWFRUXFxYVFRgYHSggGBolHRcVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGy0lHR8tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAFAAEDBAYCBwj/xAA/EAABAwIEAwUFBgQFBQEAAAABAAIDBBEFEiExBkFREyIyYXEjgZGhsRQzQlJywWJzstEVFiTh8AdDkqLCU//EABoBAAIDAQEAAAAAAAAAAAAAAAIDAAEEBQb/xAA5EQACAQIEAQoFAwEJAAAAAAAAAQIDEQQSITFBEyIyUWFxgaGxwRSR0eHwBTNC8SNDUmJykqKy4v/aAAwDAQACEQMRAD8A8eCdIKKSaxsEIRMF0qf2g+SRnd1Uysly4lZUe2d1TGR3UqZSXCFk0ejgqGY9SuVMpLh/t2/mHxCY1cf5h8UBBU7KWR3hY8+jXHfbkooojnbVhU18X5vkuDicfn8ELmgew2e1zT0cCD8Co8hV8mTOFzijOhUZxYcm/NUIYC5zWjdxDR6k2ViDDpHy9iwZn5i0AcyL3t8Ci5J72KzkrsWdyaPioziknl8EcbwTU/is22UuzOjbYHpd2uynZwlCCc9VEBpa8rNeu29laoye0X8i88FvUh/uT9LmZdiEnX5KM1ch/EVshwGCztG1DXNsCC1jjcdQSQpn8E0rMwkqTe126xNB9bk2PknLCTfBfNGWWMpJ2vfuTMIZnH8R+K41W9kwbCIyC6pBIuHMzkk9CC0LozYEzNYF+xYcshN+hzckawnXJFLFKT0i/kYANKdm49UdxaWicCadsgcTc3tl8wAgjPEPVKrUlT2d+40J62J6zkqqsVe4UAaUiOwT3GThycRO6J3R23V3IclxTXTJKyDqxThVklTIXiUlRTh5Cqxdy4mXELrrtUQcJymCRULKbt1auqhXQcisCXlSmHePqr1lSqR3j7voEMS2M1l0Zwrh6SUkyCSOMNz5+xkcC3qLcra3QhmyLQYm+GQOjcJLNbYShzwDlaXWadrEEA9AtNNQ/kn4CKvKf3dr9ocHCVMLhxqg619W07Bre180l+WoRCj4Oo9DZ7+6O66ZoPO7/ZNddh8uiCDiTEnDuXDT+WGwObTfLz0ClEWMzG3t26aXd2Og2aDcadAtclTa5sGu21zjclir8+qteGe3/WK+QdfwtStP3IAzMu8mocGuzgNhLS1t+0vbNcWsq9ZhTo7iKhpWDv3dORcAO7pGaQkkjXbRCJeHMRc0l8t9D3HVBc51vwhoJzHbRRT8Gz2BiImu1xBjZIRma4NLC4gAG+bf8pWaWWXOW3W9Pt6m+CajlnO78X66/MJCadkkl5qCnu8E2aCCS1veZodP3uuJMQs4ufiljp3oY9XeoFrW2CDu4Vqm27RrIwXFt3SNABDc3etewsk/AmNAL62mI/EI35y0dbaX10960qUt0vP7mSpSw8at5T1fBRi3p25ZPzKuO1AklJbPJOOT5BZ25NrXP/Ch6J4hQ0zGXjqxK/mwROaBr+YnXTVC0qV76nThbLp+ehYoPvov5rP6gibKNr3Su7ZkbxUPAzuIJaSfDbW90Nw376L+ZH/WFLJUGOd722JEslswuN3bhEnZePsLmpOXNdnb32OhQTvdazncwSTa21xdSN4fnLc2TS4Gx1v001Xq+DU7HQMkc0BzoonHLoLuOthpZRTRBtXI24fH2cZZE2zshBN7t1yHYqfDzbV5K3cAv1CEb5qe3+dv0ivzqPKXZjZpne63dDRnNrcgFN/hBcSWRTOaNzkLded7r1DtGsa52TsxnLrktaW8nWFhdQ1nEFNCHv7SMu3ADgS/o21zZH8Nxc36exUP1NS/bpLxUn6mEp+GqkgkUzraeKS24vsCqBwGrOYineA0XOlrDrqta3jOd4Ihonuubm5cQDpa1m7qKoxbFpGuPYtYNMxd6fxH9lI0Kalpd+Yx4qtNqM1FLwT+5huzdYmxt1sVDF4vetHjbqsR2mljLTbuMLb+8ALOU/iWfFwyNLXxNMNy6WhKyS5leAsI4hmnOzfiqxK7c8JgfJMSsA3c4SXRPkubqEEkkUlZBJJJKEHBKljl6qFIFVYhdCTlzE64TyHRCEUykkkjBCap1Y73uH9lesqlc3Vvp+5QR3LexFGtlwxUS3jaZYnNLHAQtv2pFjo7JGXf7LGxIpSYZO8Nkjs0EGz87W+HQi97j91uwzknom+77GPFQjJWk0u9J+qf1PSMs2QaQN27socQ3UaXdOOX8O6rmtpmAB8kNrN9mZIWv0tYE5Sbi35uSzNFwRUTAPdNEbnl2sp5/kYddDoVnK+jfFK+J4OZri0i1j5G3mLFa6laS0lG3ezkUv0yFSWaNRPW/Rv6t+Vj0aq4no8uX7S46EZmOmJZp4mWDRmHoguIcRUUgIeJf+4LRNaxrg59w+8hcQ82BJ6ucstBhs7wXNikLWi7jldYAbkm3qtfhuCQkPvC05SbZr7ZWk6ySN8928+azyU5rRPzv5nRoYejR0zW3f8AFL/io+4AkxChFjHRuJDifaSlwcC21nADrromPEFspZR0rMuoIiJN7W1u7XdWhws97nODmsivmBIcbNOuoaNx69FxNwnL2pZFIxzcoeJHHsxY20sdQdRp5orThp9CpQw9fnPW3bK3dva/mUMTx2edoZIWZQbgNY1tjcncC/NC1LPEWOLSQS0kaG406Hmo0Or3NcYxirRWhYw/72L+bH/UFNjVI+KaRkjcrsxda4Oj+806eRCiwv76L+Yz+oLqoifJM9rQXEvfYDfQn9gi/j4+wH879nuey4CCKaK2/Y0/1PognEApzUz53viGSISuLsoJzHLkczU9PcpcL4npWwRsaXyOEcLS2ON7iCzcGwACCcTsqaoyuippWte2PWQNZYMcSdC7zWiVmc1U3fXS/bbiVX1OEsFz7Z4PNsjwR5ueV0/i6kY1wpqYtJHdJawZTrqLXQj/ACw9t+2npo7WNjICTcX0AXH2CgbbPVufvcRxnptd2iBZktEl8vUfClRWzlLxkyGbiWtcLGdwGu1m79bBD5qqR/je53q4n6okyfD2t+5mkdfdzw1u/Rp6KX/F2X9hRxt1uNHPO1raoWr6OXuaYWXRhbwSAWXS9lzS+JE8Tq6h7QJRlaPCMgahtH4lkxKSehopu+pbUIFyb+imKmpKbO+w23PuWND7XKz6EqCSLLutPPBpmH0+SCVMYQxlcOdNJA+/VcuCnfGojpoUy4qxwmIXRHRc2RFCSSSUIJJJJQhLAdVM8XVeI6qwULLQ0dMCpPsYU1O1T2Q3LsRWUFe3usP6h8CP7qzZcV7fZtP8bh/6tKi3I9gdGtpwvcwttv2kg0vfVt9Mrb/A/BYxiN4QI3hsT5pWZngZGaNIOgcXHRpva9xsF0sFPLK76u45+NpudOy6+q/D7nohmLadpLi3vR+NzhoZW3HtZBp5WsgFXiFM2ZzmyxbsN2uj3s4Ejsmb7bG+2/J6fhem7t2PfqWnP2jwCHFt7ta1oGmxPz0VPGMIj+zl0EbbhrBoGOPcuS7uEkuJ0Og0Gq1VK3Jyzaavtfsjm4XDRxErRb5is9Et3f8AxMfiXiWOSBscEjnOJAefaCzBfuhznG4PMW5oXPxK5rQ2nvHvmuI+8CANAG6bH1ujdHgNODrCdoz3+1O7nA+JrARoOVtN1reHqCna0ZWRNuQLsZFe/LZr78+iQ7zlZlyxFCMlRyX77dVzyWfE6h92umlIO7c7reQy7W2VQnzW0/6h4UftIMLHucW94CN/I2Bvb3H0Qal4Pr5BmEDg218ziGi3XU7KsjTsdKnKnGN0kr9yABSWqHB+U/6itpItbH2gcdr7BRzYfhkdr1b5jfURxlo9xKtQZarRe133JgTC/v4v5rP6gjNE5rJZJ2yxQyMmks2Xvd038LeZVqir8NbKwQ0r3EuADpH7EnR1hzC9Jo8PhY5s4YzO8OzEAEX0y7jQ6dU2EFv9fzgZq8pSeiauupfc89xbFak5RSVEj84GfJD2IDtLAWGqpv4dxOQEzOcAN+2nPS+xJXpshYW5pOzL2vudjZoJNiATa4ss/wAVU1NOGMmlyBriQ7M1unMd7ZFZdZcOUW0LdtlfysYuPh+BovNWQM0vZt3O9EzGYYzxunkNvwgNF/7LQR8NUUkTeya4FxHfLs2muo5a2QuqwykpZcs+ZzS24ub94H+FC1lV7IfGnOXSk/JFMYzSM+6omHoZHZiov8yzgZYxFGL37rBf4pYpXQvbkpoQ1o3dl7x57oKqzPgE6EL6q/jcsVtbJLrI8u9VBRblcv2XdCN1gxXA0Ul1Fh7rW81Zw2YB1jpcbn5fRU5xcAEm1/mR/sFLT4TnLGtdq/OdRoA0Ag7631HuWRpNajle+iNO17LauYD+oIPiVO0atc34hcM4WkcCQ9uhI2OtjYqhV4NLHvl9xP8AZBGMU9x05Ta1iItUb2qFrCNCUQbSMytGc9o69hy3IA9T59Ub0FRi5bAt4XJUkoINiFwQmIBprc5KSSSsoSSSShDqIaqdcRBSt3QssuUwUy4gGikQBDKOuHsh/M+rD/ZSJq0exd5PYfiHhRblPYENROiwepmaHRRlzbkXuAL+pKGNW04MrSyCfumSxjtGwMdIcx/7YcDYbEkdFvwyTdmY8VUdODkuH52ebNTHEwMD5ZYmak998YIHaG+j8xFtdhy57mjWYhh+R8Lq50mfQiGOVxDSDcNJ7pPmb+JC6uGWRxlOHxMLxmMlTIO8dNctwB8EqDEnxyOzYjTU3dYD9nh7S9ie7o3cXNzfW62Vad1dr197HJwVXLNqm3zt9U9v9Kn29XiFqCoJaXQYdUyXIyyFgibkabtJJ3O+t+atV89cNJBRUQa4O9rU5zsOQJzDbTrdCWujnHixWsOU6t9nB4dm66N+GitDCDHqMMoqUtsc1bUmTcblpJuNdraFBmd7jpUoJ5mlft382n5EE+MuLnsfiZc0gZRR0/ie64cy9tLAA+d1ia+apDssz5gbeF5c05Tt3TyW3qMYJf2b8QjAGV0YoKZp74J7oIFwRpY87rDYq+cyE1BkL+subMW8vFqo27GqlBX28vsimmTpKjQXMI+/i/mN+q9axGGQxezaHDLYAnKw38yNF5LhA9vH+tv1XrUt8gaIg92XlctOm2ULRSWj1t/Qx4i2eKcM2nbpr2J+dl2g/CMIdA15k7KPPY5Yi5wsG2ve2t90Kk4VpnSPe9zz3hv3QbjlzWio31LWOE7YoQ23Zkd1trC4110WS4hq6RhL+1NS8uIMfbOyDTQ6aWQOyWptlqrI0j6FnYNjbaIA90te4uLRtryus/i1DSMjcQ9hkNrGV5da29rm6zk/EMpiELQGtAtoTe3rdCCUpub2svD7peRjVKvs5pLsXu/Q1L8Tgy2dMbEd5sMQaL22u4H6rMzluY5AQ3kDv71wnTZSct2aIU4QVoJLuRxJspaLYqKXZS0ey52K6RopBCgou3cY82U5Hub5vaLtb7/2RyhymVkoGVoiDACCLuN7ge/KPesxe2oNvNbLgkveHl7i7KAG3/CCTe3w+SwVHZXNtCzdgnJEI22/55rOYuczTbktBijSVn6qwBWeD1uapxVrcDN9kb7IlK4RSNGmdtiAdjcAkHpubJU7u/f4I2/D4ye2cMxcAQT+Gw0NvcnSnrqIpw0utzM44wGZ1hoST6G+vzuhhbZE6ghzyeQ0HoOZ81SnAunQeiQmqk5NlYpJ3JkwQMnCSQVkJ2bLuHdcqamagLL8Y0TpwEkARcGHn8TgFDiMLRA/K65uw/8Atb9032cnckpqmECGW35W/KRqi3LYAC1PCjh2VVftGjLGS6I2kHeOkYztuTts7S+iy4Wo4MksKk3cy0FzIy5MYB1cANz5FdDC7/n2OfjVejLw9V2P0ZZioGuDXMw+ol0PtKmQtbvyFv3VnDal8Mp9th1IcjdWxiUiztAdD3up6KoII5bERV9WddZHZItztp79+aJ4Ph9QJAY4KKnAYe9I0zOHfbva/f8A2uuhJc12/PL3OLSleaUntdav2cn5QR2+tbK3K6sxGrIuMlJGWQju+EdRy2UwwrLlcMKii0Lu1rqrODprmabdb28kZOEzuaGz4jMN7R0rWRRgGNzgGndwIG9uaVNgWGMLnyQ5iwAF08pfd5ANsry3RvW25KSos2qols/lf/z6Gf4hxksgaIq2lEjSD2dLG0NuCC0seB3SPfdYatrJZnZ5nue87ucST6XKM8U47JM50NoGxMecoija0G2xuCb/ABWeVGujDLG73HCV0ySg4u4N9/H+sIlWcVVzrs7dzWhxADLN2NtwLoZhH30f6gq8/id+p31KNdEFdN9y9zqone83kc556ucXH5qG6SSEIe6Ss0+HzP1ZG4jqGm3xRNvDUrdZnxxC1+84X+ATI05S2QDqRTs2A0kY7CiZ4pHyHo0WHxKZ2Lxs+5gY3zd3im8jFdOaXdqVnb6K9gPMLBSUvhTV1SZHFzrXPTRPTnurkYtp1ObsaqSdtSUrV8DSOGY3GW+U9QSLtPpqQsiSi3Cszm1DbGzTfP5tsdPisVRXgzTRdpo2NeSsvijSFoJJw5pde1rgg/VZrEam6zU1qbKrVgW2Yg6dUWLnPY0EktHK+iClt0ewuIuZdOqaK4ijduxRnomAX1HvQqSNaOuYgcwsrpvQGrBLYoOC4Ksvso3NT0zM0RKSJnPkFxZdiU2srKJHKamkaN9FTumuo0S4dbI07EH0KdA1OyqeBbN80OUvMaYMUdYz2Un6D8iCiDYlFWw+yk/Q7+lKuMZjAtHwbUmOc5YnSuc2zWNLQSRru7YWB1WdRjhkSGpjERaHkkNLm52i7XA3bY30uuhh3ZmOvFSg0ze03+JSizWU8Iu771xqJQbm9mgEfIKSmopA1jqmtk0d9wzsomZ81i3ITd4zX5aqGHBZXXFTWT+Jw7OHLAw2cbktHe8/BzUYp6CkYJZYs8gBOZ15JCWkAHvvAadRsFvae727WclShHmRsm9kl9dfImnoZbA1GIPawhhAb2UHdMbstzuTpa4HNDYqzBoXOc8CZwDWtzB84JtdzyXEAa3FvJYWpkzuLraEmw6DkB0UKBzT4G1UGt5Pw09C1iUrHyvdE3KwuJaLWsDytyVVWKWkkkNo2Of+kE/RGKPhGrf4g2Mb991vgB6FUk3shrnGCs2Z9JbSTg2CFrXVFU0XseTRY89780za/CYSckRkIGhtmv1uX6I1DrF8un0E34fUzmDQPdNHlaT3uQKKU/CNQ9zjK5kLRmJdI7QC/kpH8YFrcsULG7952p8jlFgEJruIqmUFr5HFp3aO63XyCjqUoRtLf84FpVpO6VvMuTUdBC+zpnTgWv2Yyg9QCV1JjdOxpbT0jGnXvynO7fTTa6zZlKdsb3bApUsdFWyJacUreLGfD5uk2/zqVgxV8R1UjQx0pDRoGsAaPkEKkqCdySepN/qu2UDueinbQtG+qyzxs5bs0Qw6jsij2hKQicUREYGwTlZpVZS3Y1Uyk2k6ldkAaBWVSlOpQpkasdFyko6sxvD28lXSVtXKvYMzYuXc99/NUZau6qJBqHKkG6jYVw2l7U9068x0WsoKQNjssdhUroZGv5A94dWncf8AOi9Ep2gjTUHULNX07jZhrNdpnMWZYLNTC5stji8BQBtOA67ja2vUoqb00Brx11K9PhRdqVxUYfb/AJZWn4oTdjO77rkjyVQys3OZ5O99PgmxUr3ZnlKG0UV3Ya7KXXFh01VE2Rs4kLaAD1QyqiN81rX6JiYllcBK3NNlSF0RQgulzdSZ/wCFQh6U2mTVdN7N/wCh39JRptL5Jqmk7j/0u+hWa4+x47ZXsOq3Qv7RoYXAaZxcC+l7KjyCNcO1sEMwfUR9pHYggAE3toWh2l79V0cPuY6yTi01fsJRieIVHcjMpF75YGlo1/QFIOEq0uaJIy1zhcBxu/8A8RcohUcbWH+nhyOJ1eXnUB1wCxlm7AXQar4lqnnMZSDr4O7vvYjX5rXKcV0ncyU6U4/twjFPs+gfZwhBFb7VUZCWkkECIAggZbvNzY9EzqjCqeRjo2iUWOZou8g2IBzu03HTmFjJahx1JJJ5kkn4lRFxS/iYLooZ8NJ9OT9DZ1HHL8uWKJjNC25PInTutsLhAqziSpkGV0rso/C3uje/L1KoQYbM/wALD6nT6ojBw4/8bgPTVInjWOhhIrVRBXaEn9yuQ1x2ufRaaHBIm7guPmrbYGjYAe5ZpYiT4mqNEy0WGSu5WHmrceDgeJ3wR8sUTmpLmxipIGsomN2apMqtOaqk1TG3d3wQXbDSSGLVw5qry4j+UfFVJKh7tyjUWA5RLcrgNyqrpxyUKVkaVhblc6dKVwumNubJOFkQJynbETsFap5YxuNequRsDvCglO3AOMb8Qe2m6qVrbbK2+G26iLgOSDNcPLYjDCtRw5WyNiOZpcxujTz8267gIPhVC6d9tmt1cfLoPMoliE2UBjRZoFgLhRxzaMvO4ao5xLFy821aPL90Hqaoi2lx1XUj+qpSvtt7x1TFFJWQmUm9WcumBN91wZuVlHK0eJu30Ueco7AXJ3Ec/wBlwHN6u+AUF0lLF3JS5nK59SP7KPMmskCrKEXJl0QuFCH0M2lTy0l2u05H6I5HRE7BTHD9NdFlsOufLkrdSOhI+BSc8rRT8PgSvzv/ABv0A/iPNW6bDIW7MB83a/VP5VLYFUmzKwU73+Fpd6BE6fh2d3is0eZufgFqYxbYWU7QkyrMbGguIEp+GYh43F3yCJU+HRM8DGjztc/NXQE+VKc29xyglsiAtXLmrqonYzV7gPUoRU4/EPAC75BWrsqTS3CDmqKQgbkD1WfqMbldtZo8tT8UPkkc7xOJ9Smqm+Il1VwNBUYnE3Y5vRDJ8YefC23qqYCe3kjyJC3UZxLUPd4nFR2VkUpPJW6LDGuPfeB5K20lciTk7AtTRUr3eFpWopsJibqG38zqrjaU8gkPELgaI4Z8TMRYO78Rt6KzDQsB0b8VovsYG5TGNo5JbqtjVRijMVmDvuXNFx0QqSIg2IW1keqlVAx/ib70yFZ7MVPDp6oyJSZIRsSEaODsvcuNlM2iiaNG/FNdWIlUJAuGpedxfzUpBV9zPJEMDw3M4yO2ZqL83bj4boMyYeVpBBkPYQtiYO+7V5H5ncvdt7kGxEhm+rkbqNLuHqSfos3L3n3I0RoWypJo2/M6qhI9WsWl1sFROyYhbGD7G4XLvJcpIihJJJFQgk6ZJQg66suUrqEPrJ1QVWlltq429V5FiH/U6rkOWmiazobZ3f2QqSDFKzWWR+U/mdlH/i1ZZOy5zsPjG+yuW8Ub7aW3/wCj/wCoqJgROPBiA0vcbFwizBvdLx3SNfMHXZaDB+Cu2aXskBABcL6A23sRdDK45SXWZSNqt9mQLkWCOy0LYdC0Aj3/ADWZxnHHtcDAW90964a4HTwkO3Q0ISr1VTjpfrGVpRpU3Nh7BcPgndk7W79LsYQXC/UalXsc4PhPs4q50cuXMGSdnlNt9g0/NYKi4kZTl0kNNC2RwIc5rphe+4tntbyQnFeIKie4u1oPKNtvnv8ANdCX6dUp9JL5owfFZtmUZ3XJDjcgkXve9jbfmFEQrNHhE77BjCfPkPIlaLC+DySO3fYflbr81mnUhDRsZGlOeyMoApY6Rx5W9VqsU4afB3mDOzqBqPVDWxFFGakroqUHF2ZRjohz1VhsIGwV6Cjc7RoJ9AidPw+8+MhvluUEqkY9JhQpSn0UAOzKeOkc7YEo8+CEOEUDHTynkNQPVaHCuHWwgmqkzSOGjGeBn6iOarO2rpfMLk0nZ69xl8Mo5GG7jZv5d0SLkXrMLYCBE8nrmFveLKOfCA1hJcSbX0sscm29ToQilHTzAsz1C2KR3ha4+gKs4RW07ZP9UHEDoLi/Vw3stozH8PtZsrfTKR+ybGnxbEVKttEjz+WklG7HfBVHNI3XpEuIUjtpWe82+qzeM1FLye0ny1+iZya6xfKvqMy4E7Ll0PVR1D3E91th1Oihma63ed8ENg73JCW3AG5NgOZJ2C1FNQ5WgHwtBv8AxO5+64+iz3DFLnqW/wAOZ+vkLD5kLYYi2zQy+vP90xKwmbM/i03dIOhPL5oDI4NbbyRbEyNT5/BZ+sk1TUhEgXUnUqEqWVQpiFiSTJ1ZBJJJKEEkmTqEEkkkoQ9ro8MhjFmMaPQBBeN5JRGGs0Z+O25B/wDnr6pJLB+nO+KjfXvOjjFai0iThrjymbGIq+NxsA0SNGYOaOUjbg38xe/MKDirHaKQsdS19SxrSS2CONwy3tfJIXNIvYeK6SS7tbC03K60v1HIjUllAGLcWVFQT+FuVrQ293WGl3O5k81QED/s8jntcPaRlpIte4cDa/uSSWZwjSxEVBWu0PjJzpSbexsZMLhc0O7KPYa5G9Aemqy2IRhkpygAHkABbRv+6dJMqPQzU+ka7g6AuicAL2f/APIWkiw889Ekl5zEP+1l3noaP7Ue4stha3n8VUq2xO/A0+eUJJJSbQ1RT1B1XVMhbd1mDoLXPoqFHR1Vdct9jTgjNIdyP4fzJJLdhqccuZ7mLF1JKTgtjX0OHU9FHaMdmDr2h+8eOeb8o8kHq6l01yz2UAvd+l3n+Hy80klKsm5WYeHilHNxA1RjlPENDmPW9yqf+amvs1o1Jt7ybBJJGqStcuU2pWOa2jsMx3KDNcC6xSSVQd0VU4D08rQ/KbnVXatzWi4ATpIpLVFRejAc1ff+yrPqSTqkkmKKEOTNPwI3WV3OzWj1JJ/YIziOgJJ9T+wSSUAkZTFJbmw2WfqZLm3Mbp0k6KESZSeVwkkjBEmCSShBJJJKyCSSSUIJJJJQh//Z" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Southwest</div>
-                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
+                            <br>
+                                
+                                <div class="portfolio-caption-heading">Desenvolvimento de sistemas</div>
+                                
+                                <div class="portfolio-caption-subheading text-muted">A área mais procurada do Contratex</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <!-- Portfolio item 6-->
+                        <!-- Portfolio item 3-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
+                                <img class="img-fluid" src="data:image/jpeg;base64,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" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
+                            <br>
+                                <div class="portfolio-caption-heading">Marketing Digital</div>
+                                <div class="portfolio-caption-subheading text-muted">Negócios</div>
                             </div>
                         </div>
                     </div>
@@ -247,34 +236,7 @@
                 </ul>
             </div>
         </section>
-        <!-- Profissionais-->
-        <section class="page-section bg-light" id="profissionais">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Profissionais</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <div class="row">
-                    
-                    	<div th:each="c, itemStat : *{cadastros}">
-                    	<div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
-                            <h4 th:text="${c.nome}">Nome</h4>
-                            <p th:text="${c.profissao.nome}" class="text-muted">Profissao</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    </div>
-                                 
-                </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
-                </div>
-            </div>
-        </section>
+        
         <!-- Clients-->
         <div class="py-5">
             <div class="container">
@@ -316,21 +278,22 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <!-- Name input-->
-                                <label for="exampleInputName">Nome Completo</label>
+                                <label for="exampleInputName">Nome Completo:</label>
                                 <input class="form-control" id="Cadastro" name="nome" type="text" placeholder="Nome Completo " data-sb-validations="required" />
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                                 <br>
                             </div>
+                            
                             <div class="form-group">
                                 <!-- Email address input-->
-                                <label for="exampleInputEmail1">Endereço de email</label>
+                                <label for="exampleInputEmail1">Endereço de email:</label>
                                 <input class="form-control" id="Cadastro" name="email" placeholder="Digite seu Email " data-sb-validations="required,email" />
                                 <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                 <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                                 <br>
                             </div>
                           	<div class="form-group">
-                          		<label for="exampleInputProfissao">Selecione sua Profissão</label>
+                          		<label for="exampleInputProfissao">Selecione sua Profissão:</label>
                         		<select class="form-control" name="profissao">
                                 <option value="null" disabled selected="selected">Profissão</option>
                                 <option th:each="p : ${profissoes}" th:value="${p.id}"
@@ -339,7 +302,7 @@
                             	<br>
                           	</div>
                           	<div class="form-group">
-                          		<label for="exampleInputProfissao">Selecione sua Profissão</label>
+                          		<label for="exampleInputProfissao">Selecione seu sexo:</label>
                         		<select class="form-control" name="sexo">
                                 <option value="null" disabled selected="selected">Sexo</option>
                                 <option th:each="s : ${sexos}" th:value="${s.descricao}"
@@ -349,7 +312,7 @@
                           	</div>
                           	<div class="form-group">
                                 <!-- Email address input-->
-                                <label for="exampleInputEndereco">Endereço</label>
+                                <label for="exampleInputEndereco">Endereço:</label>
                                 <input class="form-control" id="Cadastro" name="endereco" type="text"placeholder=" Digite seu Endereço " data-sb-validations="required,endereco" />
                                 <div class="invalid-feedback" data-sb-feedback="endereco:required">An endereco is required.</div>
                                 <div class="invalid-feedback" data-sb-feedback="endereco:endereco">Endereco is not valid.</div>
@@ -357,7 +320,7 @@
                             </div>
                             <div class="form-group">
                                 <!-- Email address input-->
-                                <label for="exampleInputPretensaoSalarial">Pretenção Salarial</label>
+                                <label for="exampleInputPretensaoSalarial">Pretenção Salarial:</label>
                                 <input class="form-control" id="Cadastro" name="pretensaoSalarial" type="number"placeholder=" Digite sua Pretenção Salarial" data-sb-validations="required,pretensaoSalarial" />
                                 <div class="invalid-feedback" data-sb-feedback="pretensaoSalarial:required">An email is required.</div>
                                 <div class="invalid-feedback" data-sb-feedback="pretensaoSalarial:pretensaoSalarial">Email is not valid.</div>
@@ -365,7 +328,7 @@
                             </div>
                             <div class="form-group">
                                 <!-- Email address input-->
-                                <label for="exampleInputExperiencia">Anos de experiência</label>
+                                <label for="exampleInputExperiencia">Anos de experiência:</label>
                                 <input class="form-control" id="Cadastro" name="anosExperiencia" placeholder="Quantos anos de experiencia você tem?" data-sb-validations="required,anosExperiencia" />
                                 <div class="invalid-feedback" data-sb-feedback="anosExperiencia:required">An email is required.</div>
                                 <div class="invalid-feedback" data-sb-feedback="anosExperiencia:anosExperiencia">Email is not valid.</div>
@@ -375,7 +338,7 @@
                         <div class="col-md-4">
                             <div class="form-group form-group-textarea mb-md-0">
                                 <!-- Message input-->
-                                <label for="exampleInputNascimento">Data de nascimento</label>
+                                <label for="exampleInputNascimento">Data de nascimento:</label>
                                 <input class="form-control" id="Cadastro" name="dataNascimento" type="text" placeholder="Dia/Mês/Ano " data-sb-validations="required,dataNascimento">
                                 <div class="invalid-feedback" data-sb-feedback="dataNascimento:required">A message is required.</div>
                                 <br>
@@ -387,30 +350,35 @@
                 </form>
             </div>
        </section>
-       	<!-- Buscar -->
-       <section class="page-section" id="pesquisar">
-       <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">Nome</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <div th:each="p : ${profissoes}">
-                    <tr>
-                        <td th:text="${p.nome}">Nome</td>
-                        <td scope="col">
-                            <a class="btn btn-dark btn-social mx-2" th:href="@{/busca/{id}(id=${p.id})}"><i
-                                class="fas fa-edit"></i></a>
-                        </td>
-                    </tr>
+       	
+       <!-- Profissionais-->
+        <section class="page-section bg-light" id="profissionais">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Profissionais</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <div class="row">
                     
+                    	<div th:each="c, itemStat : *{cadastros}">
+                    	<div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
+                            <h4 th:text="${c.nome}">Nome</h4>
+                            <p th:text="${c.profissao.nome}" class="text-muted">Profissao</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
                     </div>
-                    
-           
-                </tbody>
-            </table>      	
-		</section>  
+                    </div>
+                                 
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Os melhores profissionais você encontra aqui.</p></div>
+                </div>
+            </div>
+        </section>
         
         <!-- Footer-->
         <footer class="footer py-4">
@@ -440,18 +408,18 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <h2 class="text-uppercase">Programação em dispositivos móveis</h2>
+                                    <p class="item-intro text-muted">Conheça um pouco mais sobre...</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>No processo de programação mobile, o desenvolvedor pode ter que construir aplicativos nativos, ou seja, programas construídos para uma determinada plataforma (iOS ou Android) ou aplicativos híbridos, que podem funcionar em qualquer tipo de dispositivo e sistema operacional.</p>
                                     <ul class="list-inline">
                                         <li>
-                                            <strong>Client:</strong>
-                                            Threads
+                                            <strong>Cliente:</strong>
+                                            LDS 
                                         </li>
                                         <li>
                                             <strong>Category:</strong>
-                                            Illustration
+                                            Desenvolvimento
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -465,111 +433,7 @@
                 </div>
             </div>
         </div>
-        <!-- Portfolio item 2 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Explore
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Graphic Design
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 3 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Finish
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Identity
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 4 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Lines
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Branding
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <!-- Portfolio item 5 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
@@ -580,18 +444,18 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <h2 class="text-uppercase">Desenvolvimento de softwares</h2>
+                                    <p class="item-intro text-muted">Conheça um pouco mais sobre.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>O desenvolvimento de software é o segmento da computação que, utilizando das linguagens de programação, cria e implementa as soluções de informática. Para isso, o profissional precisa ficar atentos às necessidades das partes interessadas e saber explorar as capacidades dos dispositivos existentes.</p>
                                     <ul class="list-inline">
                                         <li>
-                                            <strong>Client:</strong>
-                                            Southwest
+                                            <strong>Cliente:</strong>
+                                            CEDS
                                         </li>
                                         <li>
-                                            <strong>Category:</strong>
-                                            Website Design
+                                            <strong>Categoria:</strong>
+                                            Desenvolvimento
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -615,18 +479,18 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <h2 class="text-uppercase">Marketing Digital</h2>
+                                    <p class="item-intro text-muted">Conheça um pouco mais sobre</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>Marketing Digital é o marketing realizado em ambiente digital. Simples assim! Isso permite que as empresas se aproximem mais de seus públicos usando ferramentas como redes sociais, e-mail marketing e sites, e é nesse ponto que precisam saber se comunicar adequadamente.</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
-                                            Window
+                                            TCJC
                                         </li>
                                         <li>
                                             <strong>Category:</strong>
-                                            Photography
+                                            Negócios
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">

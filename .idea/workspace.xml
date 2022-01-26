@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ce62b5a6-d7ff-4708-ba75-95b10191c780" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mjv/spring/web/mvc/model/Contato.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mjv/spring/web/mvc/model/Endereco.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mjv/spring/web/mvc/model/Escolaridade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mjv/spring/web/mvc/model/FaixaSalarial.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mjv/spring/web/mvc/model/Telefone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mjv/spring/web/mvc/model/TelefoneTipo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/mjv/easy-job-spring-web-mvc/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/mjv/easy-job-spring-web-mvc/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mjv/spring/web/mvc/model/Contato.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mjv/spring/web/mvc/model/Endereco.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mjv/spring/web/mvc/model/Escolaridade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mjv/spring/web/mvc/model/FaixaSalarial.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mjv/spring/web/mvc/model/Telefone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mjv/spring/web/mvc/model/TelefoneTipo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="24FLNODMiFOIaTzBOEHOQwIDCGq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ce62b5a6-d7ff-4708-ba75-95b10191c780" name="Changes" comment="" />
+      <created>1643221454045</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1643221454045</updated>
+    </task>
+    <servers />
+  </component>
+</project>
